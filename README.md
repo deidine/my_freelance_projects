@@ -26,3 +26,7 @@ $ git checkout -b `<branch-name>`
 $ git branch -d `<name>` or git branch -D deidine #this for froce delete
 
 git clone -b branch https://github.com/deidine/my_freelance_projects.git
+
+**mv my_freelance_projects/branch .**
+
+**rm -rf my_freelance_projects**
