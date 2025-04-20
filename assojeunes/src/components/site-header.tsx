@@ -10,8 +10,8 @@ export function SiteHeader() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <a href="/" className="flex items-center gap-2">
-            <img src="https://assojeunes-mauritanie.org/wp-content/uploads/2024/03/gdc_logo-1.png" alt="Logo" width={40} height={40} className="rounded" />
-            <span className="text-lg font-bold">{t("common.siteTitle")}</span>
+            <img src="./logo.jpeg" alt="Logo" width={40} height={40} className="rounded" />
+            <span className="text-lg font-bold">Reseau des jeunes veterinairesmau</span>
           </a>
         </div>
         <nav className="hidden md:flex items-center gap-6">

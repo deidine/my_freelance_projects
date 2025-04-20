@@ -1,4 +1,3 @@
-
 import { Button } from "./ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card"
 
@@ -7,7 +6,9 @@ export function FeaturedSection() {
     <section className="py-12 bg-white">
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-baseline mb-8">
-          <h2 className="text-2xl font-bold tracking-tight border-b-2 border-[#C26A2D] pb-1 mb-4 md:mb-0">À LA UNE</h2>
+          <h2 className="text-2xl font-bold tracking-tight border-b-2 border-[#C26A2D] pb-1 mb-4 md:mb-0">
+            À LA UNE
+          </h2>
           <a href="#" className="text-sm text-[#2D7D9C] hover:underline">
             Voir toutes les actualités
           </a>
@@ -16,73 +17,69 @@ export function FeaturedSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-xl">L'Atlas de la solidarité</CardTitle>
+              <CardTitle className="text-xl">Lancement officiel du Réseau</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="relative h-48 w-full overflow-hidden rounded-md">
                 <img
-                  src="https://openagenda.com/en/embed/agendas/43432911/events/youth-care-for-change?nc%5Bsort%5D=lastTimingWithFeatured.asc&nc%5Bfrom%5D=3&nc%5Blast%5D=true&host=https%3A%2F%2Fassojeunes-mauritanie.org%2F"
-                  alt="Map of solidarity initiatives"
-                   
+                  src="/images/reseau-vet-launch.jpg"
+                  alt="Lancement du réseau"
                   className="object-cover"
                 />
               </div>
               <p className="text-sm text-muted-foreground">
-                Une cartographie des acteurs de la solidarité entre la Mauritanie et l'Europe, pour mieux se connecter.
+                Le Réseau des Jeunes Vétérinaires Mauritaniens a été lancé à Nouakchott avec la participation d’experts et de jeunes diplômés.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" size="sm">
-                Voir l'Atlas de la solidarité
+                Lire l'article
               </Button>
             </CardFooter>
           </Card>
 
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-xl">Formations en plaidoyer</CardTitle>
+              <CardTitle className="text-xl">Campagne de sensibilisation</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="relative h-48 w-full overflow-hidden rounded-md">
                 <img
-                  src="/placeholder.svg?height=200&width=400"
-                  alt="Advocacy training session"
-                   
+                  src="/images/sensibilisation-vet.jpg"
+                  alt="Sensibilisation santé animale"
                   className="object-cover"
                 />
               </div>
               <p className="text-sm text-muted-foreground">
-                Réalisation de deux formations en capitalisation et en plaidoyer, pour les organisations de la société
-                civile en Mauritanie.
+                Des membres du Réseau mènent une campagne pour sensibiliser les éleveurs à la santé animale et à la prévention des zoonoses.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" size="sm">
-                S'inscrire à la formation
+                Voir les actions
               </Button>
             </CardFooter>
           </Card>
 
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-xl">Prix AILEM 2025</CardTitle>
+              <CardTitle className="text-xl">Programme de mentorat</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="relative h-48 w-full overflow-hidden rounded-md">
                 <img
-                  src="/placeholder.svg?height=200&width=400"
-                  alt="AILEM Prize announcement"
+                  src="/images/mentorat-vet.jpg"
+                  alt="Mentorat vétérinaire"
                   className="object-cover"
                 />
               </div>
               <p className="text-sm text-muted-foreground">
-                Prix du jeune entrepreneur local en Méditerranée. Consultez les conditions et postulez avant le 15 mai
-                2025.
+                Un nouveau programme met en relation les jeunes vétérinaires avec des professionnels chevronnés pour renforcer leurs compétences.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" size="sm">
-                Candidater au prix
+                Participer
               </Button>
             </CardFooter>
           </Card>

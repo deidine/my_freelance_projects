@@ -1,72 +1,74 @@
 "use client"
 
 import { useState, useEffect } from "react"
- 
+
 import { Button } from "./ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useTranslation } from "react-i18next";
- 
 
 export function HeroSection() {
-  const { t , i18n} = useTranslation();
+  const { t, i18n } = useTranslation();
+
   //@ts-ignore
   const slides = [
     {
-      "date": "29 janvier 2025",
-      "title": "Appel à projets : soutenir les initiatives en faveur des jeunes",
-      "description": "Découvrez notre nouveau programme de financement pour les projets innovants qui soutiennent la jeunesse.",
-      "primaryButton": "Postuler maintenant",
-      "secondaryButton": "En savoir plus"
+      date: "Aujourd'hui",
+      title: "Le Réseau des Jeunes Vétérinaires Mauritaniens",
+      description:
+        "Une association dédiée à la promotion des bonnes pratiques vétérinaires et au bien-être animal en Mauritanie.",
+      primaryButton: "Rejoindre le réseau",
+      secondaryButton: "Découvrir nos actions"
     },
     {
-      "date": "15 février 2025",
-      "title": "Financement des start-ups dirigées par des jeunes",
-      "description": "Participez à notre appel à projets destiné aux jeunes entrepreneurs ambitieux.",
-      "primaryButton": "Postuler maintenant",
-      "secondaryButton": "En savoir plus"
+      date: "Nos missions",
+      title: "Compétences, campagnes et partenariats",
+      description:
+        "Renforcement des compétences, organisation de caravanes de vaccination et collaboration avec des acteurs locaux.",
+      primaryButton: "En savoir plus",
+      secondaryButton: "Nos projets"
     },
     {
-      "date": "01 mars 2025",
-      "title": "Incubation de projets associatifs pour les jeunes",
-      "description": "Bénéficiez d'un accompagnement personnalisé pour concrétiser vos idées.",
-      "primaryButton": "Postuler maintenant",
-      "secondaryButton": "En savoir plus"
+      date: "Notre vision",
+      title: "Un avenir meilleur pour la santé animale",
+      description:
+        "Bâtir un futur où la santé et le bien-être animal sont au cœur des priorités communautaires et environnementales.",
+      primaryButton: "Nous soutenir",
+      secondaryButton: "Notre vision"
     }
-  ]
+  ];
 
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
-  const totalSlides = slides.length
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const totalSlides = slides.length;
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1))
-  }
+    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1))
-  }
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
 
   const goToSlide = (index: number) => {
-    setCurrentSlide(index)
-  }
+    setCurrentSlide(index);
+  };
 
   useEffect(() => {
-    if (isPaused) return
+    if (isPaused) return;
     const timer = setTimeout(() => {
-      nextSlide()
-    }, 3000)
+      nextSlide();
+    }, 3000);
 
-    return () => clearTimeout(timer)
-  }, [currentSlide, isPaused])
+    return () => clearTimeout(timer);
+  }, [currentSlide, isPaused]);
 
-  const { date, title, description, primaryButton, secondaryButton } = slides[currentSlide]
+  const { date, title, description, primaryButton, secondaryButton } = slides[currentSlide];
 
   return (
     <section
       className="relative bg-[#C26A2D] text-white overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      // dir={rtl ? "rtl" : "ltr"}
     >
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -83,20 +85,16 @@ export function HeroSection() {
           </div>
           <div className="relative h-[300px] md:h-[400px]">
             <img
-              src="https://assojeunes-mauritanie.org/wp-content/uploads/2023/03/atlas.png"
-              alt="Youth engagement illustration"
+              src="./logo.jpeg"
+              alt="Réseau vétérinaire illustration"
               className="object-contain"
-               
             />
           </div>
         </div>
       </div>
 
-      {/* Pagination dots */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-1">
-        {
-        
-        slides.map((_, i) => (
+        {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => goToSlide(i)}
@@ -107,12 +105,9 @@ export function HeroSection() {
             aria-current={i === currentSlide}
             role="button"
           />
-        ))
-        
-        }
+        ))}
       </div>
 
-      {/* Navigation arrows */}
       <button
         className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20"
         onClick={prevSlide}
@@ -122,9 +117,9 @@ export function HeroSection() {
       <button
         className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20"
         onClick={nextSlide}
-        >
+      >
         <ChevronRight className="h-6 w-6" />
       </button>
     </section>
-  )
+  );
 }

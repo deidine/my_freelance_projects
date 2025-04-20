@@ -6,7 +6,9 @@ export  function WelcomeBanner() {
   return (
     <div className="bg-[#C26A2D]/80 text-white py-4 text-center" dir={i18n.language==='ar' ? "rtl" : "ltr"}>
       <div className="container">
-        <p className="text-lg">{t("welcome.message")}</p>
+        <p className="text-lg"> 
+        Bienvenue sur notre plateforme
+        </p>
       </div>
     </div>
   )
